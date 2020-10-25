@@ -43,8 +43,10 @@ public class CovidService {
             locationStats.setCountry(record.get("Country/Region"));
             int latest = Integer.parseInt(record.get(record.size()-1));
             int prev = Integer.parseInt(record.get(record.size()-2));
+            int diff = latest - prev;
             locationStats.setLatestTotalcase(latest);
             locationStats.setDiffFromPrevday(latest-prev);
+            locationStats.setDiffFromPrevdayString(diff>0?"+"+diff:diff+"");
             newstats.add(locationStats);
         }
         this.allstats = newstats;

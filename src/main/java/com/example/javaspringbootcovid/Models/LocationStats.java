@@ -8,5 +8,6 @@ public class LocationStats {
     private String country;
     private int latestTotalcase;
     private int diffFromPrevday;
+    private String diffFromPrevdayString;
 
 }
